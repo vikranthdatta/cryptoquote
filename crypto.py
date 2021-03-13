@@ -34,7 +34,7 @@ class QuotesList:
 
     def add(self, quote):
         self.quotes_list.append(quote)
-
+ 
    def getWordListByFrequency():
        pass
         
