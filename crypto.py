@@ -36,6 +36,10 @@ class QuotesList:
         self.quotes_list.append(quote)
 
 
+    #author:vikranth
+    def getStudentListWithNoQuotes():
+        pass
+
 # Method for creating the  Quote object
 def process_file(file_name):
 
