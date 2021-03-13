@@ -43,7 +43,6 @@ class QuotesList:
         self.quotes_list.append(quote)
 
 # Generates Crypto Quote for the input Quote
-
 def generateCryptoQuote(quote):
     upper_quote = quote.upper()
     quote_list = list(upper_quote)
