@@ -89,3 +89,6 @@ def process_file(file_name):
 quotes_list = process_file("quotes_in_excel.csv")
 print(quotes_list)
     
+    
+    quoteslist_sort_author = getSortedAuthors("quotes_in_excel.csv")
+print(quoteslist_sort_author) 
