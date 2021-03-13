@@ -42,6 +42,10 @@ class QuotesList:
         pass
 
 
+    #author:vikranth
+    def getStudentListWithNoQuotes():
+        pass
+
 # Method for creating the  Quote object
 def process_file(file_name):
 
