@@ -66,6 +66,8 @@ def getSortedAuthors(file_name):
 
 
     #author:vikranth
+    #this method returns all the students who did not submit 
+    #any quotes to the collection
     def getStudentListWithNoQuotes():
         pass
 
