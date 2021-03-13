@@ -35,6 +35,12 @@ class QuotesList:
     def add(self, quote):
         self.quotes_list.append(quote)
 
+# this method returns all the quotes containing some bad words
+# the bad words are hard-coded in this method as a list
+# author: Siva Jasthi
+    def getQuotesContainingBadWords():
+        pass
+
 
 # Method for creating the  Quote object
 def process_file(file_name):
