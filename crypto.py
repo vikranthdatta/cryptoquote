@@ -35,6 +35,9 @@ class QuotesList:
     def add(self, quote):
         self.quotes_list.append(quote)
 
+    def showRandomCryptoInHTML(self):
+        return self
+        
 
 # Method for creating the  Quote object
 def process_file(file_name):
