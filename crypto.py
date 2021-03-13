@@ -35,6 +35,11 @@ class QuotesList:
     def add(self, quote):
         self.quotes_list.append(quote)
 
+        
+# This method chooses a random quote from the collection
+# The quote is converted to the crypto quote
+# The crypto quote is shown on the HTML page
+# Author : Ishana D
     def showRandomCryptoInHTML(self):
         return self
         
