@@ -34,7 +34,9 @@ class QuotesList:
 
     def add(self, quote):
         self.quotes_list.append(quote)
- 
+        
+   #this method returns the words in the quotes sorted by frequency
+   #author: Nikhitha
    def getWordListByFrequency():
        pass
         
