@@ -41,68 +41,6 @@ class QuotesList:
 
     def add(self, quote):
         self.quotes_list.append(quote)
-        
-
-   #this method returns the words in the quotes sorted by frequency
-   #author: Nikhitha
-   def getWordListByFrequency():
-        file = open(file_name)
-        lines_list = file.readlines()
-        list_of_quotes = []
-        words_list = []
-        word_dict = {}
-        for x in lines_list:
-            y = x.split(",")    
-            list_of_quotes.append(y[1])
-     
-        for z in list_of_quotes:
-            words_list += z.split(" ")
-          
-        for word in words_list:
-            if word != "":
-                if word not in word_dict.keys():
-                   word_dict[word] = 1
-                else:
-                    word_dict[word] = word_dict.get(word) + 1
-        sorted_dict = {}
-        sorted_keys = sorted(word_dict, key=word_dict.get, reverse=True)  
-
-        for w in sorted_keys:
-            sorted_dict[w] = word_dict[w]
-
-        return sorted_dict
-        
-
-        
-     # Karthik,s code for sorting based on author
-        #Method used inside sorting authors in quotes
-def mysort(line):
-  return line.split(",")[2]
-     # Karthik,s code for sorting based on author
-
-
-#Method for sorting the quotes based on author names
-def getSortedAuthors(file_name): 
-    
-      file = open(file_name)
-      lines_data = file.readlines()
-
-      for line in sorted(lines_data, key=mysort):
-       print(line)
-
-      file.close()
-      return sorted(lines_data, key=mysort)
-
-        
-# This method chooses a random quote from the collection
-# The quote is converted to the crypto quote
-# The crypto quote is shown on the HTML page
-# Author : Ishana D
-    def showRandomCryptoInHTML(self):
-        return self
-        
-
-
 
 # Generates Crypto Quote for the input Quote
 def generateCryptoQuote(quote):
@@ -128,11 +66,6 @@ def generateCryptoQuote(quote):
 
     return cryptoquote
 
-    #author:vikranth
-    #this method returns all the students who did not submit 
-    #any quotes to the collection
-    def getStudentListWithNoQuotes():
-        pass
 
 # Method for creating the  Quote object
 def process_file(file_name):
@@ -154,6 +87,3 @@ def process_file(file_name):
 quotes_list = process_file("quotes_in_excel.csv")
 print(quotes_list)
     
-    
-    quoteslist_sort_author = getSortedAuthors("quotes_in_excel.csv")
-print(quoteslist_sort_author) 
