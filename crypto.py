@@ -139,9 +139,15 @@ class QuotesList:
     # Reference: https://www.geeksforgeeks.org/python-test-if-string-contains-element-from-list/
     def getQuotesContainingBadWords(self):
         bad_word = ["heck", "damn"]
-        # TODO: this need to be calculated
+        #this need to be calculated
         quotes_list_containing_bad_words = []
-        # TODO
+        y = ""
+        for x in self.quotes_list:
+            for y in bad_word:
+                word = " " + y.lower() + " "
+                if word in str(x).lower():
+                    quotes_list_containing_bad_words.append(x)
+                    break
 
         # create a mini quotes collection 
         quotes_mini_collection = QuotesList(quotes_list_containing_bad_words)
@@ -155,7 +161,7 @@ class QuotesList:
     #          This method writes the contents of the quotes_list into the file
     def saveToFile(self):
         file = open("quotes_in_excel.csv", "w", encoding='iso-8859-15')
-        #file.write(self.quotes_list)
+        file.write(str(self.quotes_list))
         file.close()
     
         
@@ -248,8 +254,8 @@ word_frequency = quotes_list_object.getWordListByFrequency()
 print(word_frequency)
 
 
-# ========= Siva Jasthi: Method # 29 ========================
-print("===  Method #29 (Siva Jasthi) def getQuotesContainingBadWords()  method ====")
+# ========= Nikhitha Gollamudi: Method # 29 ========================
+print("===  Method #29 (Nikhitha Gollamudi) def getQuotesContainingBadWords()  method ====")
 mini_collection_29 = quotes_list_object.getQuotesContainingBadWords()
 mini_collection_29.printQuotes()
 
