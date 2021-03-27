@@ -108,6 +108,24 @@ class QuotesList:
     # So please sync with the UPSTREAM every week
     #=====================================================================
 
+    # ============= Method No: 3 (Achuyuth Madhavan) ===============
+    # Purpose: This method returns the name of the student
+    #          who submitted the most number of quotes
+    def getStudentWithMostQuotes(self):
+        # TODO
+        student_name = "TODO first name last name"
+        return student_name
+
+
+    # ============= Method No: 11 (Karthik Uppala) ===============
+    # Purpose: This method returns provide the list of "author"
+    # (name of the authors) in sorted order
+    def getSortedAuthors(self):
+        # TODO
+        # you have to operate on this variable self.quotes_list
+
+        sorted_authors_list = ["a", "bx", "c", "jasthi"]
+        return sorted_authors_list
     
 
     # ============= Method No: 13 (Nikhitha Gollamudi) ===============
@@ -133,6 +151,28 @@ class QuotesList:
             sorted_dict[w] = word_dict[w]
 
         return sorted_dict
+
+
+
+    # ============= Method No: 14 (Om Rege) ===============
+    # Purpose: This method returns the count of quotes submitted by him/her 
+    def getCountOfQuotesByStudent(self, some_student_name):
+        quote_count = 0
+        # TODO
+        return quote_count
+   
+
+
+    # ============= Method No: 20 (Sai Akaksha Josylua) ===============
+    # Purpose: This method returns the count of Authors in the quotes collection
+    def getAuthorCount(self):
+        # this is the quotes_list variable
+        #e need to operat on this one
+        author_count = 30
+        #for x in self.quotes_list:
+
+        return author_count   
+    
 
     # ============= Method No: 29 (Siva Jasthi) ===============
     # Purpose: The method returns a mini-collection of quotes containing the bad words
@@ -165,22 +205,7 @@ class QuotesList:
         file.close()
     
         
-    # Karthik,s code for sorting based on author
-    #Method used inside sorting authors in quotes
-    def mysort(line):
-      return line.split(",")[2]
-
-    # Karthik,s code for sorting based on author
-    #Method for sorting the quotes based on author names
-    def getSortedAuthors(file_name): 
-        file = open(file_name)
-        lines_data = file.readlines()
-
-        for line in sorted(lines_data, key=mysort):
-           print(line)
-
-        file.close()
-        return sorted(lines_data, key=mysort)
+  
 
     # For adding a quote to the collection
     def add(self, quote):
@@ -244,20 +269,48 @@ quotes_list_object = QuotesList.createWithFileName("quotes_in_excel.csv")
 
 # Step 3: Invoke the helper function to print the quotes
 print("=== Printing all the quotes:  printQuotes() method ========")
-quotes_list_object.printQuotes()
+#quotes_list_object.printQuotes()
 
 # Step 4: Now let us exercise some methods in the QuotesList
+
+# ========= Achyuth Madhavan: Method # 3 ========================
+print("=== Method #3 (Achyuth Madhavan) def getStudentWithMostQuotes( ) method ====")
+student_name = quotes_list_object.getStudentWithMostQuotes()
+print(student_name)
+
+
+# ========= Karthik Uppala: Method # 11 ========================
+print("=== Method #11 (Karthik Uppala) def getSortedAuthors( )method ====")
+sorted_authors_list_x = quotes_list_object.getSortedAuthors( )
+print(sorted_authors_list_x)
 
 # ========= Nikhita Gollamudi: Method # 13 ========================
 print("=== Method #13 (Nikhita Gollamudi) getWordListByFrequency( ) method ====")
 word_frequency = quotes_list_object.getWordListByFrequency()
-print(word_frequency)
+#print(word_frequency)
+
+# ========= Om Rege: Method # 14 ========================
+print("=== Method #14 (Om Rege) getCountOfQuotesByStudent(student_name)method ====")
+student_name = "Jasthi"
+quote_count = quotes_list_object.getCountOfQuotesByStudent(student_name)
+print(quote_count)
+
+student_name = "ABC"
+quote_count = quotes_list_object.getCountOfQuotesByStudent(student_name)
+print(quote_count)
+
+
+# ========== Happy Josyula: Method #20 =================
+print("=== Method #20  (Happy Josyula) getAuthorCount( ) method ====")
+quotes_list_object = QuotesList.createWithFileName("method_20.csv")
+author_count = quotes_list_object.getAuthorCount( )
+print(author_count)
 
 
 # ========= Nikhitha Gollamudi: Method # 29 ========================
 print("===  Method #29 (Nikhitha Gollamudi) def getQuotesContainingBadWords()  method ====")
 mini_collection_29 = quotes_list_object.getQuotesContainingBadWords()
-mini_collection_29.printQuotes()
+#mini_collection_29.printQuotes()
 
 
 # ========= Nikhita Gollamudi: Method # 30 ========================
