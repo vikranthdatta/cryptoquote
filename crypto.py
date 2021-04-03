@@ -125,6 +125,15 @@ class QuotesList:
         student_name = "TODO first name last name"
         return student_name
 
+
+    # ============= Method No: 4 (Anjneya Kumar) ===============
+    # Purpose: The method returns a mini-collection of quotes by a certain author (given by the user)
+    #TODO: 1. you need to take the author as the input parameter to the method
+    #TODO: 2. You need to build a mini collection and return it
+    def getQuotesByAuthor(self):
+        pass
+       
+     
     # ============= Method No: 6 (Eshaan Dhavala) ===============
     # Purpose: This method returns dictionary
     #  with author as the key, and count as the value
@@ -192,11 +201,10 @@ class QuotesList:
 
         return sorted_dict
 
-
-# ============= Method No: 15 (Shekar Motukuri) ===============
+# ============= Method No: 14 (Shekar Motukuri) ===============
     # Purpose: This method returns count of Quotes submitted by students(him/her)
     
-    def getCountOfQuotesByStudent(self):
+    def getCountOfQuotesByStudent(self, student_name):
         student_count = 0
         student_string=""
         student_name=""
@@ -251,6 +259,34 @@ class QuotesList:
                 longest_quote = current_quote         
                 
         return longest_quote
+    
+
+
+    # ============= Method No: 28 (Vishnu Vundamati) ===============
+    # Purpose: The method allows you to update a quote in the collection/file
+    def updateQuote(self, id, quote, author, submitted_by):
+
+        #default
+        updated_status = "The id you entered does not exist in the collection"
+
+        #sorting through each quote to find the quote with the id the user entered
+        for x in self.quotes_list:
+            current_id = x.id
+            current_quote = x.quote
+            current_author = x.author
+            current_submitted_by = x.submitted_by
+
+            #updates the quote with user input values
+            if (current_id == id):
+                x.quote = quote
+                x.author = author
+                x.submitted_by = submitted_by
+                #proof of update
+                updated_status = "The quote has successfully been updated"
+
+                #exiting loop
+                break
+        return updated_status
 
     # ============= Method No: 29 (Siva Jasthi) ===============
     # Purpose: The method returns a mini-collection of quotes containing the bad words
@@ -356,14 +392,17 @@ print("=== Method #3 (Achyuth Madhavan) def getStudentWithMostQuotes( ) method =
 student_name = quotes_list_object.getStudentWithMostQuotes()
 print(student_name)
 
+# ========= Anjneya Kumar: Method # 4 ========================
+print("=== Method #4 (Anjneya Kumar) def getQuotesByAuthor( ) method ====")
+mini_quote_collection = quotes_list_object.getQuotesByAuthor()
+#mini_quote_collection.printQuotes()
+
 
 
 # ========= Eshaan Dhavala: Method # 6 ========================
 print("=== Method #6 (Eshaan Dhavala) def getAuthorAndQuoteCount( ) method ====")
 author_count_dictionary = quotes_list_object.getAuthorAndQuoteCount()
 pp.pprint(author_count_dictionary)
-# TODO 1: Why is author count off by 1?
-# TODO 2: How to pretty print a dictionary
 
 
 	
@@ -383,17 +422,17 @@ print(sorted_authors_list_x)
 # ========= Nikhita Gollamudi: Method # 13 ========================
 print("=== Method #13 (Nikhita Gollamudi) getWordListByFrequency( ) method ====")
 word_frequency = quotes_list_object.getWordListByFrequency()
-print(word_frequency)
+pp.pprint(word_frequency)
 
 # ========= Soma Modukuri: Method # 14 ========================
 print("=== Method #14 (Soma Modukuri) getCountOfQuotesByStudent(student_name)method ====")
 student_name = "Jasthi"
-#quote_count = quotes_list_object.getCountOfQuotesByStudent(student_name)
-#print(quote_count)
+quote_count = quotes_list_object.getCountOfQuotesByStudent(student_name)
+print(quote_count)
 
 student_name = "ABC"
-#quote_count = quotes_list_object.getCountOfQuotesByStudent(student_name)
-#print(quote_count)
+quote_count = quotes_list_object.getCountOfQuotesByStudent(student_name)
+print(quote_count)
 
 
 
@@ -416,6 +455,17 @@ print("=== Method #21  (Soma Modukuri) getLongestQuote( ) method ====")
 longest_quote = quotes_list_object.getLongestQuote( )
 print(longest_quote)
 
+# ========= Sumedh Ghatti: Method # 24 ========================
+print("=== Sumedh Ghatti: Method #24; def getQuotesContainingWord(input_word) method ====")
+#TODO: you need to pass in a string here
+#quotes_mini_collection = quotes_list_object.getQuotesContainingWord()
+#quotes_mini_collection.printQuotes()
+
+
+# ========= Vishnu Vundamati: Method # 28 ========================
+print("===  Method #28 (Vishnu Vundamati) def updateQuote(self, id, quote, author, submitted_by)  method ====")
+update_status = quotes_list_object.updateQuote(2, "test_quote", "test_author", "test_submitted_by")
+print(update_status)
 
 # ========= Nikhitha Gollamudi: Method # 29 ========================
 print("===  Method #29 (Nikhitha Gollamudi) def getQuotesContainingBadWords()  method ====")
