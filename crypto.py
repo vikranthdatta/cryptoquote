@@ -183,7 +183,7 @@ class QuotesList:
 
         # Now show the file name in a browser
         new = 2
-        url = "showRandomQuoteInHtml.html"
+        url = "random_quote.html"
         webbrowser.open(url,new=new)
 
         
@@ -515,8 +515,24 @@ sorted_authors_list_x = quotes_list_object.getSortedAuthors( )
 print(sorted_authors_list_x)
 
 # ========= Nikhita Gollamudi: Method # 13 ========================
-print("=== Method #13 (Nikhita Gollamudi) getWordListByFrequency( ) method ====")
+print("=== Method #13.2 (Nikhita Gollamudi) getWordListByFrequency( ) method ====")
 word_frequency = quotes_list_object.getWordListByFrequency()
+pp.pprint(word_frequency)
+
+
+print("=== Method #13.2 (Nikhita Gollamudi) getWordListByFrequency( ) method ====")
+q1 = Quote(1, "Hello", "A1", "S1")
+q2 = Quote(2, "How are you?", "A1", "S1")
+q3 = Quote(3, "OK", "A1", "S1")
+q4 = Quote(4, "Great", "A1", "S1")
+q5 = Quote(5, "Good to know", "A1", "S1")
+q6 = Quote(6, "TTYL", "A1", "S1")
+q7 = Quote(7, "Bye now", "A1", "S1")
+q8 = Quote(8, "See ya!", "A1", "S1")
+q9 = Quote(9, "Bye Bye!", "A2", "S2")
+quotes_list = [q1,q2,q3,q4,q5,q6,q7,q8, q9]
+nikhita_QuotesList_object = QuotesList(quotes_list)
+word_frequency = nikhita_QuotesList_object.getWordListByFrequency()
 pp.pprint(word_frequency)
 
 # ========= Soma Modukuri: Method # 14 ========================
@@ -545,8 +561,8 @@ q6 = Quote(6, "TTYL", "A1", "S1")
 q7 = Quote(7, "Bye now", "A1", "S1")
 q8 = Quote(8, "See ya!", "A1", "S1")
 quotes_list = [q1,q2,q3,q4,q5,q6,q7,q8]
-pravna_QuotesList_object = QuotesList(quotes_list)
-random_quote_2 = pravna_QuotesList_object.getRandomQuote()
+pranav_QuotesList_object = QuotesList(quotes_list)
+random_quote_2 = pranav_QuotesList_object.getRandomQuote()
 print(random_quote_2)
 
 # =================pranav mukkara #16======================
